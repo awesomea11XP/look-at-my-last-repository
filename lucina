@@ -10,3 +10,5 @@ def scrambel2encrypt(palintext):
         charcount = charcount + 1
     ciphertext = oddchars + evenchars
     return ciphertext
+
+print(scrambel2encrypt("Hey! Good morning, Monstropolis. It’s now five after the hour of 6:00 A.M. In the big monster city.The emperature's a balmy 65 degrees, which is good news for you reptiles and, it looks like it's going to be a perfect day to maybe, hey, just lie in bed, sleep in or simply... Work out that flab that's hanging over the bed! Get up, Sulley!"))
