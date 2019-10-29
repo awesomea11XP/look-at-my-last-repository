@@ -1,1 +1,12 @@
-
+def scrambel2encrypt(palintext):
+    evenchars = ""
+    oddchars = ""
+    charcount = 0
+    for ch in palintext:
+        if charcount % 2 == 0:
+            evenchars = evenchars +ch
+        else:
+            odd = evenchars + ch
+        charcount = charcount + 1
+    ciphertext = oddchars + evenchars
+    return ciphertext
