@@ -1,14 +1,32 @@
-def scrambel2encrypt(palintext):
-    evenchars = ""
-    oddchars = ""
-    charcount = 0
-    for ch in palintext:
-        if charcount % 2 == 0:
-            evenchars = evenchars +ch
-        else:
-            odd = evenchars + ch
-        charcount = charcount + 1
-    ciphertext = oddchars + evenchars
-    return ciphertext
+def scramble2Encrypt(plainText):
 
-print(scrambel2encrypt("Hey! Good morning, Monstropolis. It’s now five after the hour of 6:00 A.M. In the big monster city.The emperature's a balmy 65 degrees, which is good news for you reptiles and, it looks like it's going to be a perfect day to maybe, hey, just lie in bed, sleep in or simply... Work out that flab that's hanging over the bed! Get up, Sulley!"))
+    evenChars = ""
+    oddChars = ""
+    charCount = 0
+    for ch in plainText:
+        if charCount % 2 == 0:
+            evenChars = evenChars + ch
+        else:
+            oddChars = oddChars + ch
+        charCount = charCount + 1
+    cipherText = oddChars + evenChars
+    return cipherText
+
+
+def scramble2Decrypt(cipherText):
+    halfLength = len(cipherText) // 2
+    evenChars = cipherText[halfLength:]
+    oddChars = cipherText[:halfLength]
+    plainText = ""
+
+    for i in range(halfLength):
+        plainText = plainText + evenChars[i]
+        plainText = plainText + oddChars[i]
+
+    if len(oddChars) < len(evenChars):
+        plainText = plainText + evenChars[-1]
+
+    return plainText
+
+print(scramble2Encrypt("the quick brown fox jumps over the lazy dog"))
+print(scramble2Decrypt("h ol noentuetiwywudayn o s hs"))
