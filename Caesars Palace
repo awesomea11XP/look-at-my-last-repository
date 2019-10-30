@@ -1,5 +1,10 @@
 def caesarspalace(plaintext):
     result = ""
-    
+
     for i in range(len(plaintext)):
+        char = plaintext[i]
         
+        
+        if (char.isupper()):
+            result += chr ((ord(char) + plaintext-65) % 26 + 65)
+        else:
